@@ -8,9 +8,26 @@
     <title>Transport Management System</title>
     <link rel="stylesheet" href="{% static 'style/main.css' %}">
     <script src="{% static 'js/script.js' %}"></script>
+
+
+    {% include 'login_register.html' %}
 </head>
 <body>
+   
     {% include 'navbar.html' %}
+
+    {% if messages %}
+    <ul class="messages">
+        {% for message in messages %}
+        <li>{{ message }}</li>
+        {% endfor %}
+    </ul>
+    {% endif %}
+
+
+    {% include 'home.html' %}
+    
+    
     {% block content %}
     
     <div class="image-container">
